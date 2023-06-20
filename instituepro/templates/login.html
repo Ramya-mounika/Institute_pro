@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input{
+      margin-top: 20px;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    body{
+      margin-top: 30px;
+    }
+    h1{
+      color: lime;
+      font-family: Algerian;
+      font-style: italic;
+      text-shadow: 0px 0px 5px red;
+
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img.jpg' %}')"; class="text-white">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <form method="post">
+            {% csrf_token %}
+            <h1 class="text-center font-weight-bold">Login Here...</h1>
+            <input type="text" name="uname" placeholder="Username" class="form-control">
+            <input type="password" name="pass" placeholder="Password" class="form-control">
+            <center>
+            <input type="Submit" value="Login" class="btn btn-lg btn-outline-primary font-weight-bold">
+            <input type="reset" value="Clear" class="btn btn-lg btn-outline-warning font-weight-bold"><br>
+            </center>
+            <p class="text-center"><span> Create New Account </span><a href="{% url 'signup' %}" style="text-decoration:none">Create New Account</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    #k1{
+      margin-left: -100px;
+    }
+    #k2{
+      margin-left: 130px;
+    }
+    #k3{
+      margin-top: -10px;
+      font-size: 55px;
+      font-family: Stencil;
+      text-shadow: 0px 0px 5px lime;
+    }
+    #a1{
+      margin-left: -135px;
+    }
+    #a2{
+      margin-left: 130px;
+    }
+    #a3{
+      margin-left: -45px;
+    }
+    #a4{
+      margin-left: 50px;
+    }
+    #a5{
+      margin-left: -140px;
+    }
+    #a6{
+      margin-left: -50px;
+    }
+    #a7{
+      margin-left: 55px;
+    }
+    #a8{
+      margin-left: 140px;
+    }
+    #a9{
+      margin-left: -150px;
+    }
+    #a10{
+      margin-left: -55px;
+    }
+    #a11{
+      margin-left: 60px;
+    }
+    #a12{
+      margin-left: 140px;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    #b1{
+      margin-top: -150px;
+    }
+    #b2{
+      margin-left: -150px;
+    }
+    #b3{
+      margin-left: -35px;
+    }
+    #b4{
+      margin-left: 60px;
+    }
+    #b5{
+      margin-left: 140px;
+    }
+    h1{
+      color: maroon;
+      font-size: 55px;
+      font-family: Showcard Gothic;
+    }
+    h3{
+      color: yellow;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+      text-shadow: 0px 0px 5px black;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img9.jpg' %}')"; class="text-white">
+    {% include 'navbar.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'servicespage' %}" class="btn btn-md btn-outline-warning font-weight-bold" id="k1">Services</a>
+        </div>
+        <div class="col-md-8 mt-4">
+          <h2 class="text-center display-4 font-weight-bold" id='k3'>Welcome To NTH Institue</h2>
+        </div>
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'mainpage' %}" class="btn btn-outline-warning text-danger font-weight-bold" id='k2'>Mainpage</a>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center font-weight-bold mt-5">Gallery Details</h1>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/a.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a1'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/b.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a3'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/c.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a4'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/d.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a2'>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/e.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a5'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/f.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a6'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/g.jpg' %}" style="width:100%; height:75%; border-radius:50%" class="img-thumbnail rounded-circle" id='a7'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/h.jpg' %}" style="width:100%; height:75%;" class="img-thumbnail rounded-circle" id='a8'>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/i.jpg' %}" style="width:100%; height:50%;" class="img-thumbnail rounded-circle" id='a9'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/j.jpg' %}" style="width:100%; height:50%;" class="img-thumbnail rounded-circle" id='a10'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/m.jpg' %}" style="width:100%; height:50%;" class="img-thumbnail rounded-circle" id='a11'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/l.jpg' %}" style="width:100%; height:50%;" class="img-thumbnail rounded-circle" id='a12'>
+        </div>
+      </div>
+    </div>
+    <div class="container" id='b1'>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/n.jpg' %}" style="width:100%; height:90%;" class="img-thumbnail rounded-circle" id='b2'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/o.jpg' %}" style="width:100%; height:90%;" class="img-thumbnail rounded-circle" id='b3'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/p.jpg' %}" style="width:100%; height:90%;" class="img-thumbnail rounded-circle" id='b4'>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/r.jpg' %}" style="width:100%; height:90%;" class="img-thumbnail rounded-circle" id='b5'>
+        </div>
+      </div>
+    </div>
+  </body>
+  <h3 class="text-center display-3 font-weight-bold mt-2">Thank You</h3>
+</html>

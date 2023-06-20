@@ -1,0 +1,100 @@
+<!-- {% include 'index.html' %} -->
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    div{
+      margin-top: 5px;
+    }
+    #k1{
+      margin-left: -100px;
+    }
+    #k2{
+      margin-left: 130px;
+    }
+    #k3{
+      margin-top: -10px;
+      color: purple;
+      font-size: 50px;
+      font-family: Elephant;
+    }
+   #k4{
+     color: maroon;
+     font-size: 18px;
+     font-weight: bolder;
+     font-family: Dubai Medium;
+   }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    h3{
+      color: red;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+      text-shadow: 0px 0px 5px blue;
+    }
+    h1{
+      font-size: 55px;
+      font-family: Centaur;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img7.jpg' %}')"; class="text-dark">
+    {% include 'navbar.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'contactpage' %}" class="btn btn-md btn-outline-danger font-weight-bold" id="k1">Contact</a>
+        </div>
+        <div class="col-md-8 mt-4">
+          <h2 class="text-center display-4 font-weight-bold" id='k3'>Welcome To NTH Institue</h2>
+        </div>
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'servicespage' %}" class="btn btn-outline-warning font-weight-bold" id='k2'>Services</a>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center mt-4 text-primary">Feedback Details Here...</h1>
+    <div class="container mr-2">
+      <div class="row">
+        <div class="offset-md-1 col-md-6 mt-3">
+          <form method="POST">
+            {% csrf_token %}
+            <select class="form-control" name="name">
+              <option value="{{request.user|capfirst}}">{{request.user|capfirst}}</option>
+            </select>
+            <textarea name="content" rows="8" cols="80" placeholder="Please Comment...." class="mt-2"></textarea>
+            <input type="number" name="rate" placeholder="Ratings" class="mt-4"><br>
+            <input type="date" name="date" value="data" class="mt-4">
+            <center>
+              <input type="Submit" value="Save" class="btn btn-lg btn-outline-success font-weight-bold">
+              <input type="reset" value="Clear" class="btn btn-lg btn-outline-primary font-weight-bold">
+              </center>
+              <div class="" id='k4'>
+                {% if nth %}
+                {% for i in nth %}
+                {{ i.content }}<br>
+                <div class="text-right">
+                  <a href="{% url 'delete' i.id %}"><img src="{% static 'images/delete.jpg' %}" alt="delete" style="width:5%; height:5%"></a>
+                  {{ i.user }}
+                  {{ i.rating }}/10
+                  {{ i.date }}
+                  user by {{ request.user|capfirst }}<hr>
+                </div>
+                {% endfor %}
+                {% else %}
+                <h2 class="text-center">No Data Available</h2>
+                {% endif %}
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <h3 class="text-center display-3 font-weight-bold mt-5">Thank You</h3>
+  </body>
+</html>

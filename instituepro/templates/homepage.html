@@ -1,0 +1,176 @@
+{% load static %}
+<html>
+  <head>
+    <title>Home</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    #img1{
+      margin-left: 80px;
+    }
+    #img{
+      margin-left: 75px;
+    }
+    #img2{
+      margin-left: 70px;
+    }
+    #img3{
+      margin-left: 75px;
+    }
+    #k1{
+      margin-left: -100px;
+    }
+    #k2{
+      margin-left: 130px;
+    }
+    #k3{
+      margin-top: -10px;
+      font-family: Broadway;
+      font-size: 55px;
+    }
+    #k4{
+      margin-top: -50px;
+      color:black;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    #m1{
+      margin-top: -110px;
+      color: blue;
+      font-weight: bolder;
+      font-family: Berlin Sans FB Demi;
+      text-shadow: 0px 0px 5px violet;
+    }
+    #m2{
+      margin-top: 50px;
+      color: black;
+      font-size: 50px;
+      font-family: Arial Black;
+      text-shadow: 0px 0px 5px darkgreen;
+    }
+    h2{
+      text-shadow: 0px 0px 5px yellow;
+    }
+    #s1{
+      font-family: Cooper Black;
+      text-shadow: 0px 0px 5px lime;
+      margin-top: 15px;
+    }
+    #s2{
+      font-size: 25px;
+      font-family: Forte;
+     /* text-shadow: 0px 0px 5px red; */
+    }
+    #s3{
+      color: magenta;
+      text-shadow: 0px 0px 5px green;
+      font-family: Bodoni MT Black;
+    }
+    #s4{
+      color: blue;
+      font-size: 25px;
+      font-weight: bolder;
+      font-family: Britannic Bold;
+    }
+    #a1{
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Bahnschrift;
+    }
+    h3{
+      color: pink;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img4.jpg' %}')"; class="text-white">
+    {% include 'navbar.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 mt-3">
+          <a href="{% url 'mainpage' %}" class="btn btn-md btn-outline-warning font-weight-bold" id="k1">Mainpage</a>
+        </div>
+        <div class="col-md-8 mt-3">
+          <h2 class="text-center display-4 font-weight-bold text-dark" id='k3'>Welcome To NTH Institue</h2>
+        </div>
+        <div class="col-md-2 mt-3">
+          <a href="{% url 'contactpage' %}" class="btn btn-outline-danger font-weight-bold" id='k2'>Contact</a>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center text-primary" id='s1'>About NTH Founder</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'images/sir.jpg' %}" style="width:60%; height:60%; border-radius:50%" class="img-thumbnail rounded-circle">
+        </div>
+      <div class="col-md-4">
+        <h4 class="text-danger" id='s2'>Mr. Narayana is the founder of NarayanaTechHouse.He has 10+ years Exprience in teaching.
+          He has Working TCS Company.Now he given the training to students for achiving their goal</h4>
+      </div>
+      <!-- <div class="col-md-4">
+        <h4 class="text-center" id='k4'>Review..</h4>
+      </div> -->
+      </div>
+    </div>
+    <h1 class="text-center" id='s3'>About Institue</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'images/insti.jpg' %}" style="width:65%; height:65%; border-radius:50%" class="img-thumbnail rounded-circle">
+        </div>
+      <div class="col-md-4">
+        <h4 id='s4'>Narayana Tech House(NTH) is located in Ameerpet In Hyderabad.The institue established in 2020.
+          In the institue 10+ years experienced faculty is there.They provide several courses.</h4>
+      </div>
+      </div>
+    </div>
+    <h1 class="text-center" id='m1'>Students Who Got More Packegs</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/stud1.jpg' %}" style="width:50%; height:75%;" class="img-thumbnail rounded-circle mt-5" id="img1">
+          <p class="text-center text-primary" id='a1'>Mrs.Suma</p>
+          <p class="text-center text-primary" id='a1'>Exp,MNC,17LPA</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/stud2.jpg' %}" style="width:50%; height:75%;" class="img-thumbnail rounded-circle mt-5" id="img">
+          <p class="text-center text-warning" id='a1'>Ms.Mamata</p>
+          <p class="text-center text-warning" id='a1'>Fresher,DBS,8.5LPA</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/stud3.jpg' %}" style="width:50%; height:75%;" class="img-thumbnail rounded-circle mt-5" id="img2">
+          <p class="text-center text-danger" id='a1'>Mr.Hrushikesh Rout</p>
+          <p class="text-center text-danger" id='a1'>Exp,6.6LPA</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/stud4.jpg' %}" style="width:50%; height:75%;" class="img-thumbnail rounded-circle mt-5" id="img3">
+          <p class="text-center text-info" id='a1'>Mr.Sharad Jhosi</p>
+          <p class="text-center text-info" id='a1'>Exp,Amodocs,9.5LPA</p>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center" id="m2">Our Clients</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/hcl.jpg' %}" style="width:60%; height:60%; border-radius:50%" class="img-thumbnail rounded-circle ml-5 mt-5">
+          </div>
+          <div class="col-md-3">
+            <img src="{% static 'images/infosys.jpg' %}" style="width:60%; height:60%; border-radius:50%" class="img-thumbnail rounded-circle mt-5">
+          </div>
+          <div class="col-md-3">
+            <img src="{% static 'images/tcs.jpg' %}" style="width:60%; height:60%; border-radius:50%" class="img-thumbnail rounded-circle mt-5">
+          </div>
+          <div class="col-md-3">
+            <img src="{% static 'images/wipro.jpg' %}" style="width:60%; height:60%; border-radius:50%" class="img-thumbnail rounded-circle mr-5 mt-5">
+          </div>
+      </div>
+    </div>
+    <h3 class="text-center display-3 font-weight-bold">Thank You</h3>
+  </body>
+</html>

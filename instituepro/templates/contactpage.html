@@ -1,0 +1,161 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top: 10px;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    form{
+      padding: 10px;
+      margin-top: 10px;
+    }
+    #s1{
+      padding: 15px;
+      border-radius:10%;
+      box-shadow: 0px 0px 5px blue;
+      margin-top: 10px;
+    }
+    #k1{
+      margin-left: -100px;
+    }
+    #k2{
+      margin-left: 130px;
+    }
+    #k3{
+      margin-top: -10px;
+      color: magenta;
+      font-size: 60px;
+      font-family: Century;
+      text-shadow: 0px 0px 5px yellow;
+    }
+    #s4{
+      font-family: Agency FB;
+      font-size: 75px;
+      text-shadow: 0px 0px 5px aqua;
+    }
+    #s6{
+      color: darkgreen;
+      text-shadow: 0px 0px 5px white;
+      font-family: Bahnschrift SemiCondensed;
+    }
+    #s7{
+      font-weight: bold;
+      font-family: Baskerville Old Face;
+    }
+    #s8{
+    font-family: Century;
+    font-weight: bolder;
+
+    }
+    #s9{
+      color: aqua;
+      font-family: fantasy;
+      text-shadow: 0px 0px 5px blue;
+    }
+    #a1{
+      color: blue;
+      font-size: 20px;
+      font-family: Blackadder ITC;
+    }
+    #a2{
+      color: black;
+      font-size: 20px;
+      font-family: Blackadder ITC;
+    }
+    #a3{
+      color: red;
+      font-size: 20px;
+      font-family: Blackadder ITC;
+    }
+    h3{
+      color: yellow;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+      text-shadow: 0px 0px 5px blue;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img6.jpg' %}')"; class="text-white">
+    {% include 'navbar.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'homepage' %}" class="btn btn-md btn-outline-warning font-weight-bold" id="k1">Home</a>
+        </div>
+        <div class="col-md-8 mt-4">
+          <h2 class="text-center display-4 font-weight-bold" id='k3'>Welcome To NTH Institue</h2>
+        </div>
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'feedbackpage' %}" class="btn btn-outline-success font-weight-bold" id='k2'>Feedback</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <form method="POST">
+            <h1 class="text-center display-4 font-weight-bold" id='s6'>Contact Details</h1>
+            {% csrf_token %}
+            <input type="text" name="fname" placeholder="First Name" class="form-control">
+            <input type="text" name="lname" placeholder="Last Name" class="form-control">
+            <input type="number" name="mobile" placeholder="Mobile" class="form-control">
+            <input type="email" name="email" placeholder="Email" class="form-control">
+            <input type="text" name="gender" placeholder="Gender" class="form-control">
+            <input type="text" name="course" placeholder="Course" class="form-control">
+            <center>
+            <input type="Submit" value="Save" class="btn btn-outline-warning btn-lg font-weight-bold mt-3">
+            <input type="reset" value="Clear" class="btn btn-outline-info btn-lg font-weight-bold mt-3">
+            </center>
+          </form>
+        </div>
+        <div class="offset-md-1 col-md-5" id="s1">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4451544912577!2d78.44357301487703!3d17.438395188048005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910956383b7f%3A0xb25b7c2fe2e4fd5d!2sNarayana%20Tech%20House!5e0!3m2!1sen!2sin!4v1683190976024!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><h2 class="text-center display-4 font-weight-bold text-danger" id='s4'>Welcome To Ameerpet</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mt-4">
+          <h1 class="text-primary" id='s7'>NTH Address1</h1>
+          <ul>
+            <li id='a1'>Flat No 303, 3rd floor</li>
+            <li id='a1'>Naga Sai Nivas Prime Hospital Lane</li>
+            <li id='a1'>opposite to Balaji Towers</li>
+            <li id='a1'>Ameerpet, Hyderabad</li>
+            <li id='a1'>Telangana 500016.</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-4">
+          <h1 class="text-success" id='s8'>NTH Address2</h1>
+          <ul>
+            <li id='a2'>Flat No 403, 4rd floor</li>
+            <li id='a2'>Prime Hospital Lane</li>
+            <li id='a2'>Balaji Towers</li>
+            <li id='a2'>Ameerpet, Hyderabad</li>
+            <li id='a2'>Telangana 500016.</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-4">
+          <h1 id='s9'>NTH Address3</h1>
+          <ul>
+            <li id='a3'>Flat No 512, 6th floor</li>
+            <li id='a3'>Oman Hospital Lane</li>
+            <li id='a3'>Mounika Towers</li>
+            <li id='a3'>Vaddavalli, Sattenapalli</li>
+            <li id='a3'>AP 522403.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3 class="text-center display-3 font-weight-bold mt-4">Thank You</h3>
+  </body>
+</html>

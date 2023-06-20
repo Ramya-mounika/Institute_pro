@@ -1,0 +1,61 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    /* input{
+      margin-top: 20px;
+    } */
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    body{
+      margin-top: 30px;
+    }
+    h1{
+      color: blue;
+      font-family: Berlin Sans FB Demi;
+      text-shadow: 0px 0px 5px yellow;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img1.jpg' %}')"; class="text-white">
+    <h1 class="text-center mt-5 font-weight-bold">Signup Here...</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          {% include 'msg.html' %}
+          <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="uname" placeholder="Username" class="form-control mt-2">
+            <input type="email" name="email" placeholder="Email" class="form-control mt-2">
+            <input type="password" name="pass1" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            class="form-control mt-2" required>
+            <input type="password" name="pass2" placeholder="Conform Password" class="form-control mt-2">
+            <center>
+              <label class="text-danger font-weight-bold">{{abc}}</label>
+            </center>
+            <center>
+            <input type="Submit" value="Signup" class="btn btn-md btn-outline-warning font-weight-bold mt-3">
+            <input type="reset" value="Clear" class="btn btn-md btn-outline-danger font-weight-bold mt-3">
+            </center>
+            <div id="message">
+              <h5>Password must contain the following:</h5>
+              <p id='letter' class="Invalid">A <b>lowercase</b>letter</p>
+              <p id='capital' class="Invalid">A <b>Capital(uppercase)</b>letter</p>
+              <p id='number' class="Invalid">A <b>number</b></p>
+              <p id='lenght' class="Invalid">Minimum <b>8 characters</b></p>
+            </div>
+            <center>
+            <a href="{% url 'login' %}">I have already account</a>
+          </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+{% load static %}
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    #img1{
+      margin-left: 200px;
+    }
+    #img2{
+      margin-left: 150px;
+    }
+    #img3{
+      margin-left: 120px;
+    }
+    #k1{
+      margin-left: -100px;
+    }
+    #k2{
+      margin-left: 130px;
+    }
+    #k3{
+      margin-top: -10px;
+      font-size: 65px;
+      color: black;
+      font-family: Impact;
+      text-shadow: 0px 0px 5px yellow;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    h3{
+      color: magenta;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+      text-shadow: 0px 0px 5px lime;
+    }
+    h1{
+      color: gold;
+      font-family: Arial Black;
+      text-shadow: 0px 0px 5px blue;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img8.jpg' %}')"; class="text-white">
+    {% include 'navbar.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'feedbackpage' %}" class="btn btn-md btn-outline-warning font-weight-bold" id="k1">Feedback</a>
+        </div>
+        <div class="col-md-8 mt-4">
+          <h2 class="text-center display-4 font-weight-bold" id='k3'>Welcome To NTH Institue</h2>
+        </div>
+        <div class="col-md-2 mt-4">
+          <a href="{% url 'gallerypage' %}" class="btn btn-outline-danger text-info font-weight-bold" id='k2'>Gallery</a>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center font-weight-bold mt-4 display-5">Services Details Here...</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-11">
+          {% if nth %}
+          <table class="table table-bordered text-center text-white table-hover mt-4">
+            <thead class="bg-success">
+              <tr>
+                <th>Course Name</th>
+                <th>Fee</th>
+                <th>Duration</th>
+                <th>StartDate</th>
+                <th>Trainer Name</th>
+                <th>Trainer Exp</th>
+                <th>Trainer Mode</th>
+              </tr>
+            </thead>
+            <tbody class="bg-dark">
+              {% for i in nth %}
+              <tr>
+                <td>{{ i.courseName }}</td>
+                <td>{{ i.fee }}</td>
+                <td>{{ i.duration }}</td>
+                <td>{{ i.startDate }}</td>
+                <td>{{ i.trainerName }}</td>
+                <td>{{ i.trainerExp }}</td>
+                <td>{{ i.trainerMode }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <h2 class="text-center">No Information Available Here...</h2>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{% static 'images/py.jpg' %}" style="width:50%; height:50%; border-radius:50%" class="img-thumbnail rounded-circle mt-5" id="img3">
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/java.jpg' %}" style="width:50%; height:50%; border-radius:50%" class="img-thumbnail rounded-circle mt-5" id="img2">
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'images/dj.jpg' %}" style="width:50%; height:50%; border-radius:50%" class="img-thumbnail rounded-circle mt-5" id="img1">
+        </div>
+      </div>
+    </div>
+    <h3 class="text-center display-3 font-weight-bold mt-5">Thank You</h3>
+  </body>
+</html>

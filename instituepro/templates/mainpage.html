@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+  <head>
+    <title>Main</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    body{
+      margin-top: 10px;
+    }
+    .jumbotron{
+      margin-top: 20px;
+      margin-right: 150px;
+      margin-left: 150px;
+      border: 2px magenta solid;
+    }
+    #bg{
+      background-size: 1600px 800px;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    h3{
+      color: yellow;
+      font-family: Bodoni MT Poster Compressed;
+      font-style: oblique;
+      text-shadow: 0px 0px 5px black;
+    }
+    h1{
+      color: cyan;
+      font-family: Onyx;
+      font-size: 140px;
+    }
+  </style>
+  <body id="bg" style="background-image: url('{% static 'images/img11.jpg' %}')"; class="text-white">
+    <h1 class="text-center font-weight-bold mt-5">Welcome To NTH Institue Project</h1>
+    <div class="jumbotron text-center shadow-lg mt-5">
+      <a href="{% url 'homepage' %}" class="btn btn-outline-success mr-5 font-weight-bold">Home</a>
+      <a href="{% url 'contactpage' %}" class="btn btn-outline-primary mr-5 font-weight-bold">Contact</a>
+      <a href="{% url 'feedbackpage' %}" class="btn btn-outline-info mr-5 font-weight-bold">Feedback</a>
+      <a href="{% url 'servicespage' %}" class="btn btn-outline-warning mr-5 font-weight-bold text-secondary">Services</a>
+      <a href="{% url 'gallerypage' %}" class="btn btn-outline-dark mr-5 font-weight-bold text-warning">Gallery</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <h3 class="text-center display-3 font-weight-bold mt-5">Thank You</h3>
+  </body>
+</html>
